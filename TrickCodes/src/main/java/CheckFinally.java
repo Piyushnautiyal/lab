@@ -16,7 +16,7 @@ class Test
 		finally
 		{
 			a=5;
-			System.out.println("value of a");
+			System.out.println("value of a "+a);
 			
 
 		}
