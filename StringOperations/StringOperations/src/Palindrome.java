@@ -1,4 +1,3 @@
-import javax.swing.plaf.synth.SynthScrollPaneUI;
 
 public class Palindrome {
 	public static void main(String[] args) {
@@ -6,10 +5,11 @@ public class Palindrome {
 		String str ="MAMA";
 		String reverseStr="";
 		
-		for(int i=str.length()-1;i>=0;i--)
-		{
-			reverseStr = reverseStr+str.charAt(i);
-		}
+		System.out.println(getReverse1(str));
+		System.out.println(getReverse2(str));
+		
+		reverseStr	= getReverse1(str);
+		reverseStr	= getReverse2(str);
 		
 		System.out.println("Reverse String "+reverseStr);
 		if(str.equals(reverseStr))
@@ -19,5 +19,19 @@ public class Palindrome {
 		else
 			System.out.println("Not Palindrome");
 	}
-
+	
+	public static String getReverse1(String stringToReverse) {
+		StringBuilder stringBuilder	= new StringBuilder(stringToReverse);
+		stringBuilder.reverse();
+		return stringBuilder.toString();
+	}
+	
+	public static String getReverse2(String stringToReverse) {
+		String reverseStr	= "";
+		for(int i=stringToReverse.length()-1;i>=0;i--)
+		{
+			reverseStr = reverseStr+stringToReverse.charAt(i);
+		}
+		return reverseStr;
+	}
 }
