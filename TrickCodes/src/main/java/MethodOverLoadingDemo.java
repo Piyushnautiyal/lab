@@ -1,18 +1,22 @@
+/**
+ * Below Example Show Instance initializer Block , Static Block , Constructor
+ * It shows in  which order  statement prints 
+ * Instance Initializer Explanation :https://www.javatpoint.com/instance-initializer-block
+ * Static block loads at time of class loading & constructor envoked after object creation
+ */
 public class MethodOverLoadingDemo {
-
 	{
 		System.out.println("One");
 	}
-	
 	static {
 		System.out.println("two");
 	}
-	
 	public MethodOverLoadingDemo(){
 		System.out.println("three");
 	}
 	
 	public static void main(String args []) {
+		//Second this will Execute
 		System.out.println("four");
 		MethodOverLoadingDemo methodOverLoadingDemo	= new MethodOverLoadingDemo();
 		
