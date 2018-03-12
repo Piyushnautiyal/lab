@@ -1,4 +1,4 @@
-package OVERIDING_BOTH_HASHCODE_EQUALS;
+package overriding.both.hashcode.equals;
 // Java program to illustrate
 // overriding of equals and
 // hashcode methods

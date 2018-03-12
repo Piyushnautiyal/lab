@@ -1,4 +1,4 @@
-package OVERIDING_BOTH_HASHCODE_EQUALS;
+package overriding.both.hashcode.equals;
 /*
  * REFERENCE LINK :- https://www.geeksforgeeks.org/override-equalsobject-hashcode-method/
  * In this case we override both methods properly.

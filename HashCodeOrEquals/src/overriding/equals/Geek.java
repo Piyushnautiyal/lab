@@ -1,4 +1,4 @@
-package OVERRIDING_EQUALS;
+package overriding.equals;
 // Java program to illustrate
 // Overriding only the equals(Object) method
 import java.io.*;

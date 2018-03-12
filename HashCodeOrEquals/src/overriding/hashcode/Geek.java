@@ -1,4 +1,4 @@
-package OVERRIDING_HASHCODE;
+package overriding.hashcode;
 // Java program to illustrate 
 // Overriding only hashCode() method
  

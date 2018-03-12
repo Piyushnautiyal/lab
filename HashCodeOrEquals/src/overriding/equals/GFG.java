@@ -1,17 +1,16 @@
-package OVERRIDING_HASHCODE;
+package overriding.equals;
 /*
  * REFERENCE LINK :- https://www.geeksforgeeks.org/override-equalsobject-hashcode-method/
- *In this when we call map.put(“xyz”, “IT”); 
- *then it tried to replace first value (CSE) by second value(IT) but it was not possible so it insert second pair (key, value) 
- *into a new LinkedList node that hashmap internally use. 
- *It it total violation of rule as key are unique in map.*/
-
+ * As you can see clearly, both values are getting stored into different bucket locations. 
+ * Like that every insert into map will get different bucket location whether we are using same key objects or different 
+ * i.e. state of key objects is same or different.
+ */
 import java.util.HashMap;
 import java.util.Map;
 
 class GFG 
 {
-    public static void main (String[] args)
+    public static void main (String[] args) 
     {
          
         // creating two Objects with 
