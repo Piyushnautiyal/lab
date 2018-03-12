@@ -10,6 +10,8 @@ public class DynamicOrRuntimePolymorphism {
 	public static void main(String args[]) {
 		Parent parent	= new Child();
 		parent.nameOfClass();
+		//parent.display();
+		parent.doSomething();
 	}
 }
 
@@ -17,11 +19,19 @@ class Parent{
 	public void nameOfClass() {
 		System.out.println("This is parent class");
 	}
+	
+	public void doSomething() {
+		System.out.println("This is parent class soSomething method");
+	}
 }
 
 class Child extends Parent{
 	@Override
 	public void nameOfClass() {
 		System.out.println("This is child class");
+	}
+	
+	public void display() {
+		System.out.println("Display of child class.");
 	}
 }

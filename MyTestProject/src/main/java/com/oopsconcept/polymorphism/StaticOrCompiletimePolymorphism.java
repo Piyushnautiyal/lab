@@ -8,9 +8,8 @@ public class StaticOrCompiletimePolymorphism {
 		System.out.println(obj.add(10, 20));
 		System.out.println(obj.add(10, 20, 30));
 	}
-
-
 }
+
 class SimpleCalculator
 {
     int add(int a, int b)
