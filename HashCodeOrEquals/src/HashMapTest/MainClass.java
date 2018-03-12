@@ -19,5 +19,6 @@ public class MainClass {
 		System.out.println(hm.get(k2));
 		System.out.println(hm.get(null));
 		System.out.println(hm.get(k4));
+		System.out.println(hm.get(""));
 	}
 }
