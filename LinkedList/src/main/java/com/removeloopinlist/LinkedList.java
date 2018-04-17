@@ -1,6 +1,7 @@
-package com.detectloopinlist;
+package com.removeloopinlist;
 
 import java.util.HashSet;
+
 
 
 class LinkedList
@@ -52,13 +53,13 @@ class LinkedList
 			if(s.contains(h))
 			{
 				return true;
-				//	return h.data;
+			//	return h.data;
 			}
 			s.add(h);
 			h = h.next;
 		}
 		return false;
-
+		
 	}
 	public static  int detectLoopFloydsAlgo(Node h)
 	{
@@ -72,13 +73,35 @@ class LinkedList
 			if(slowptr == fastptr)
 			{
 				System.out.println("Loop Found & count "+count);
-				
+				removeloop(slowptr,h);
 				return 1;
 			}
 		}
 		System.out.println("Loop Not Found");
 		return -1;
 
+	}
+	public static void removeloop(Node slowptr,Node h)
+	{
+		System.out.println("Removing Loop");
+		Node ptr1 = null,ptr2=null;
+		ptr1 = h;
+		while(1==1)
+		{
+			ptr2=slowptr;
+			while(ptr2.next!=slowptr && ptr2.next!=ptr1 )
+			{
+				ptr2 = ptr2.next;
+			}
+			
+			if(ptr2.next == ptr1)
+			{
+				break;
+			}
+		
+			ptr1=ptr1.next;
+		}
+		ptr2.next=null;
 	}
 	public static void main(String[] args) 
 	{
@@ -95,11 +118,10 @@ class LinkedList
 		/*if (detectLoop(head))
 			System.out.println("Loop found");
 		else
-			System.out.println("No Loop");
-		*/
-		
+			System.out.println("No Loop");*/
 		int result  = detectLoopFloydsAlgo(head);
 		System.out.println("Result of Loop Check "+result);
+
 
 
 	}
