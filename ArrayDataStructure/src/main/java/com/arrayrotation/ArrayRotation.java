@@ -1,3 +1,4 @@
+package com.arrayrotation;
 
 public class ArrayRotation {
 	void printArray(int arr[], int size) 
@@ -21,6 +22,7 @@ public class ArrayRotation {
 			arr[i] = arr[i+1];
 		arr[i] = temp;
 	}
+	
 	public static void main(String[] args) 
 	{
 		ArrayRotation rotate = new ArrayRotation();
