@@ -9,7 +9,7 @@ public class SlayDragonQuest implements Quest {
 		this.stream = stream;
 	}
 	public void embark() {
-		stream.println("SlayDragon quest");
+		System.out.println("SlayDragon quest");
 		
 	}
 
