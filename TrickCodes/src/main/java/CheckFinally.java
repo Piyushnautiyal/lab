@@ -20,6 +20,7 @@ class Test
 			
 
 		}
+		System.out.println("After final block");
 		return a;
 	}
 	

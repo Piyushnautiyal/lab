@@ -26,12 +26,12 @@ public static void main(String args[])
 	Employee emp2=new Employee("b",2);
 	Employee emp3=new Employee("c",3);
 	Employee emp4=new Employee("d",4);
-	HashMap hm=new HashMap();
+	HashMap<Employee,Employee> hm=new HashMap<Employee,Employee>();
 	hm.put(emp1, emp1);
 	hm.put(emp1, emp2);
 	hm.put(emp1, emp3);	
 	System.out.println("size of hashmap :"+hm.size());
-	System.out.println("emp4 :"+hm.get(emp4));
+	System.out.println("emp4 :"+hm.get(emp4).name);
 	
 }
 }

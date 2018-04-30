@@ -15,8 +15,15 @@ public class DynamicOrRuntimePolymorphism {
 	}
 }
 
+/*
+ * https://www.javatpoint.com/access-modifiers
+ * 
+ * If you are overriding any method, overridden method (i.e. declared in subclass) must not be more restrictive.
+ */
+
+
 class Parent{
-	public void nameOfClass() {
+	void nameOfClass() {
 		System.out.println("This is parent class");
 	}
 	
