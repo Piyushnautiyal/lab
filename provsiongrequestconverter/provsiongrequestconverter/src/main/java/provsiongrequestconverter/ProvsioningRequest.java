@@ -1,0 +1,19 @@
+package provsiongrequestconverter;
+
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RestController;
+
+@RestController
+public class ProvsioningRequest {
+
+	@RequestMapping(value = "/user", method = RequestMethod.POST)
+	public void provisionReq(@RequestBody Subscription sbscription) {
+
+		System.out.println("Creating User " + sbscription.getAon());
+
+		/* org.springframework.web.servlet.DispatcherServlet */
+
+	}
+}
