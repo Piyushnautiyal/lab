@@ -17,15 +17,19 @@
         <Console name="console" target="SYSTEM_OUT">
             <PatternLayout   pattern="[%-5level] %d{yyyy-MM-dd HH:mm:ss.SSS} [%t] %c{1} - %msg%n" />
         </Console>
-    </Appenders>
+    
+      </Appenders>
+ 
+ 
     <Loggers>
     	
-        <!-- <Logger name="com.howtodoinjava" level="debug" additivity="true">
-            <appender-ref ref="fileLogger" level="debug" />
-        </Logger> -->
-        
-        <Root level="all" additivity="false">
+         <Logger name="App" level="TRACE" additivity="false">
+            <appender-ref ref="fileLogger" level="TRACE" />
+        </Logger>
+           
+        <!-- <Root level="all" additivity="false">
             <appender-ref ref="fileLogger" />
-        </Root>
+        </Root> -->
+        
     </Loggers>
 </Configuration>
