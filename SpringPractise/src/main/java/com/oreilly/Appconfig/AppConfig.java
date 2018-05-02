@@ -16,11 +16,14 @@ public class AppConfig {
 	@Bean
 	public Game game()
 	{
-		//return new BaseballGame(redSox(),cubs());
 		return new BaseballGame();
+		//return new BaseballGame();
 	}
-//	@Bean(name="Manas")
-	@Bean
+	//	@Bean(name="Manas")
+	/*we have created a bean name for autowiring purpose check BaseBall class we have two references there 1.homeTeam 2.awayTeam
+	 of type Team so we have created bean name to achieve autowiring by Name as byType is not possible due to same refernce type i.e
+	 Team */
+	@Bean(name="homeTeam")
 	public Team redSox()
 	{
 		return new RedSox();
@@ -30,7 +33,7 @@ public class AppConfig {
 	{
 		return new Cubs();
 	}
-	@Bean
+	@Bean(name="awayTeam")
 	public Team royals()
 	{
 		return new Royals();

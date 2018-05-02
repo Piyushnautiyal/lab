@@ -1,15 +1,21 @@
 package com.oreilly.entities;
 
+import javax.annotation.Resource;
+
+import org.springframework.beans.factory.annotation.Autowired;
+
 public class BaseballGame implements Game {
+	@Resource
 	private Team homeTeam;
+	@Resource
 	private Team awayTeam;
 
 	public BaseballGame() {}
 
-	public BaseballGame(Team homeTeam, Team awayTeam) {
+	/*public BaseballGame(Team homeTeam, Team awayTeam) {
 		this.homeTeam = homeTeam;
 		this.awayTeam = awayTeam;
-	}
+	}*/
 
 	@Override
 	public void setHomeTeam(Team team) {

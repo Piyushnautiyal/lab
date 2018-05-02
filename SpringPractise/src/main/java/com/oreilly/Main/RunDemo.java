@@ -14,18 +14,18 @@ public class RunDemo {
 		ApplicationContext ctx  = new AnnotationConfigApplicationContext(AppConfig.class);
 		Game game  = ctx.getBean("game",Game.class);
 
-		Team redsox = ctx.getBean("redSox",Team.class);
-		Team cubs = ctx.getBean("cubs", Team.class);
+		/*Team redsox = ctx.getBean("homeTeam",Team.class);
+		Team cubs = ctx.getBean("awayTeam", Team.class);
 		Team royals = ctx.getBean("royals",Team.class);
 
 		game.setHomeTeam(royals);
-		game.setAwayTeam(cubs);
+		game.setAwayTeam(cubs);*/
 
 		System.out.println(game.playGame());
 
-		game.setHomeTeam(cubs);
+		/*game.setHomeTeam(cubs);
 		game.setAwayTeam(redsox);
-		System.out.println(game.playGame());
+		System.out.println(game.playGame());*/
 	}
 
 }
