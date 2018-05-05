@@ -113,28 +113,28 @@ public class SynchronizedBlocks_Static_NonStatic {
 
 		//Q - Can two threads access static synchronized methods at the same time, with the same object reference.
 		//A - No
-		/*
-		thread2.start();
-		thread5.start();
-		 */
+		
+		/*thread2.start();
+		thread5.start();*/
+		 
 
 
 		//Q - Can two threads access synchronized and static synchronized method at the same time. with same object reference
 		//A - Yes
 		//R	- static synchronized and non static synchronized method lock on two different object. 
 		//	  Static will lock on ClassName.class and non static will lock on "this".
-		/*
-		thread1.start();
-		thread2.start();
-		 */
+		
+	/*	thread1.start();
+		thread4.start();*/
+		 
 
 
 		//Q - Can two threads work simultaneously one with access to non synchronized method and other with synchronized method  at the same time with same object reference.
 		//A - Yes
-		/*
-		thread1.start();
-		thread3.start();
-		 */
+		
+		/*thread1.start();
+		thread3.start();*/
+		 
 
 
 		//Q - Can two threads access static synchronized methods at the same time, with DIFFERENT object reference.
@@ -182,7 +182,7 @@ class SharedObject{
 	}
 
 	public synchronized void m4() {
-		System.out.println("m1 is called..sleeping for 10 seconds ");
+		System.out.println("m4 is called..sleeping for 10 seconds ");
 		try {
 			Thread.sleep(10000);
 		} catch (InterruptedException e) {
