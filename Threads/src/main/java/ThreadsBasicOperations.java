@@ -14,7 +14,7 @@ public class ThreadsBasicOperations {
 		//testDemonThreads.testDemonThreads();
 
 		TestYieldMethod testYieldMethod	= new TestYieldMethod();
-		//testYieldMethod.testYield();
+		testYieldMethod.testYield();
 	}
 }
 
@@ -110,7 +110,7 @@ class TestJoin{
 				try {
 					if(i%2==0)
 						System.out.println(i);
-					Thread.sleep(10);
+					Thread.sleep(1000);
 				}catch(Exception e) {
 					e.printStackTrace();
 				}
@@ -138,7 +138,9 @@ class TestJoin{
 		try {
 			printEvenNumbers.start();
 
-			printEvenNumbers.join();
+			printEvenNumbers.join(); // This join will stop the current thread to move forward.
+			
+			System.out.println("This will line will be printed after the even numbers printing thread completes execution.");
 
 			printOddNumbers.start();
 
@@ -207,9 +209,9 @@ class TestYieldMethod{
 
 		public void run() {
 			try {
-				Thread.yield();
 				for(int i=0;i<20;i++) {
 					System.out.println("long running thread count is " + i);
+					Thread.sleep(100);
 				}
 			}catch(Exception e) {
 				e.printStackTrace();
@@ -223,6 +225,7 @@ class TestYieldMethod{
 			try {
 				for(int i=0;i<20;i++) {
 					System.out.println("Short running count is " + i);
+					Thread.sleep(100);
 				}
 			}catch(Exception e) {
 				e.printStackTrace();
@@ -231,8 +234,11 @@ class TestYieldMethod{
 	});
 	
 	public void testYield() {
+		//The java.lang.Thread.yield() method causes the currently executing thread object to 
+		//temporarily pause and allow other threads to execute.
 		
 		shortRunningThread.start();
+		Thread.yield();
 		longRunningLowPriorityThread.start();
 	}
 }
