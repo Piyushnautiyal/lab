@@ -7,12 +7,12 @@ public class MyExceptionMain {
 		checkString("manas");
 	}
 
-	public static void checkString(String s) throws MyCustomCheckedException{
+	public static void checkString(String s) throws MyCustomUnCheckedException{
 
 
 		if("".equals(s))
 		{
-			throw new MyCustomCheckedException("String is null");
+			throw new MyCustomUnCheckedException("String is null");
 		}
 		else
 		{
