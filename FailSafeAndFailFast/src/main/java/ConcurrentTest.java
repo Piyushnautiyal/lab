@@ -13,6 +13,9 @@ public static void main(String[] args) {
 		concurrentHashMap.put("4", "Suraj");
 		
 		Iterator<String> itr = concurrentHashMap.keySet().iterator();
+		
+		concurrentHashMap.put("0", "TP");
+		
 		while(itr.hasNext())
 		{
 			String  key = itr.next();
