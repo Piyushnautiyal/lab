@@ -132,8 +132,8 @@ public class SynchronizedBlocks_Static_NonStatic {
 		//Q - Can two threads work simultaneously one with access to non synchronized method and other with synchronized method  at the same time with same object reference.
 		//A - Yes
 		
-		/*thread1.start();
-		thread3.start();*/
+		thread1.start();
+		thread3.start();
 		 
 
 
@@ -150,7 +150,7 @@ public class SynchronizedBlocks_Static_NonStatic {
 
 class SharedObject{
 
-	public static synchronized void m1() {
+	public synchronized void m1() {
 		System.out.println("m1 is called..sleeping for 15 seconds ");
 
 		try {

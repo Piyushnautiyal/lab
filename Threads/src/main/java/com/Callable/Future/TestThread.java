@@ -18,8 +18,13 @@ public class TestThread{
 		Future<Long> result20 = executor.submit(new FactorialService(20));
 
 		Long factorial10 = result10.get();
+		
 		System.out.println("10! = " + factorial10);
 
+		//System.out.println("Cancel task ::"+result20.cancel(true));
+		System.out.println("Is cancled ::"+result20.isCancelled());
+		System.out.println("Is Done ::"+result20.isDone());
+		
 		Long factorial20 = result20.get();
 		System.out.println("20! = " + factorial20);
 
