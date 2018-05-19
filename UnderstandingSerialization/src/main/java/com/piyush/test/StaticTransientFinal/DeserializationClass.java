@@ -30,5 +30,8 @@ public class DeserializationClass {
 	    System.out.println("Employee ID is :"+emp.id);
 	    System.out.println("Religion is :"+emp.religion);
 	    System.out.println("Education is ::"+emp.education);
+	    System.out.println("Country is ::"+emp.Country);
+
+	    
 	  }
 	}
