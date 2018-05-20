@@ -42,8 +42,10 @@ class Service extends Thread
 		} catch (InterruptedException e) {
 			e.printStackTrace();
 		}
-		System.out.println(servicetype+" Service is Running ");
+		System.out.println(servicetype+" counts down");
 		countDownLatch.countDown();
+		System.out.println(servicetype+" Service is Running ");
+		
 	}
 
 }
