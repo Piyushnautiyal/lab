@@ -1,34 +1,38 @@
 package com.Callable.Future;
 
-import java.util.concurrent.Callable;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
+import java.util.concurrent.Future;
 import java.util.concurrent.FutureTask;
 
 public class ThrowingExceptionFromAThread {
     public static void main(String[] args) {
+
+        FutureTask<String> callablefutureTask   = new FutureTask<>(new CallableTask());
+        FutureTask<String> runnableFutureTaks   = new FutureTask<String>(new RunnableTask(),"Done");
         
-        Thread t1   = new Thread(new RunnableThread());
-        t1.start();
-        
-        FutureTask<String> futureTask   = new FutureTask<>(new CallableTask());
         
         ExecutorService executorService = Executors.newFixedThreadPool(1);
-        executorService.execute(futureTask);
+
+        Future<String> future   = executorService.submit(new CallableTask()); // This will return future
+        
+        executorService.execute(new RunnableTask()); //This is executing runnable task to pool.
+        
+        executorService.execute(runnableFutureTaks); // Here we convert runnable to callable internally
+       
+        executorService.execute(callablefutureTask); // We executing callable taks to pool.
+        
+
         
         
-    }
-}
-
-class RunnableThread implements Runnable{
-    public void run() {
-        throw new RuntimeException("Runnable task ecception");
-    }
-}
-
-class CallableTask implements Callable<String>{
-    
-    public String call() throws Exception{
-        throw new RuntimeException("Callable task ecception");
+        try {
+            Thread.sleep(1000);
+            System.out.println(runnableFutureTaks.get());
+            executorService.shutdown();
+            System.out.println("END>......................");
+            executorService.shutdown();
+        }catch(Exception e) {
+            e.printStackTrace();
+        }
     }
 }
