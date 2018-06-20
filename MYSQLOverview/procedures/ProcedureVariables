@@ -31,6 +31,22 @@ DECLARE variable_name datatype(size) DEFAULT default_value;
     It is available and accessible until the session ends.
 
 
+
+VARIABLE SCOPE
+
+1.  f you declare a variable inside a stored procedure, 
+    it will be out of scope when the END statement of stored procedure reached.
+
+2.  You can declare two or more variables with the same name in different scopes 
+    because a variable is only effective in its own scope.
+    
+3.  A variable that begins with the @ sign is session variable. 
+    It is available and accessible until the session ends.
+
+
+
+
+
 eg. 
 
 DECLARE total_sale INT DEFAULT 0;
