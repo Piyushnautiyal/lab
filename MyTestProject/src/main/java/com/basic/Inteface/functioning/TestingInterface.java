@@ -1,6 +1,6 @@
 package com.basic.Inteface.functioning;
 
-public class TestingInterface implements A,B {
+public class TestingInterface implements C {
 
 	public static void main(String[] args) {
 		TestingInterface obj = new TestingInterface();

@@ -23,13 +23,22 @@ public class ArrayRotation {
 		arr[i] = temp;
 	}
 	
+	
+	public void rotateClockWise(int ar[],int rotationPointIndex) {
+	    for(int i=0;i<ar.length;i++) {
+	        rotationPointIndex   = (rotationPointIndex + 1) % ar.length;
+	        System.out.print(ar[rotationPointIndex]+ " ");
+	    }
+	}
+	
 	public static void main(String[] args) 
 	{
 		ArrayRotation rotate = new ArrayRotation();
 		int arr[] = {1, 2, 3, 4, 5, 6, 7};
-		rotate.leftRotate(arr, 2, 7);
+		rotate.rotateClockWise(arr, 2);
+	/*	rotate.leftRotate(arr, 2, 7);
 		rotate.printArray(arr, 7);
-		System.out.println();
+	*/	System.out.println();
 		
 	}
 

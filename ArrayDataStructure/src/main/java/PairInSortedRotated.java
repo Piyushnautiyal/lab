@@ -11,7 +11,7 @@ class PairInSortedRotated
             if (arr[i] > arr[i+1])
                 break;
             
-        System.out.println("Val of i "+i);
+        System.out.println("Val of r "+i);
         int l = (i + 1) % n; // l is now index of                                          
                             // minimum element
         System.out.println("Val of l "+l);                  
@@ -23,16 +23,24 @@ class PairInSortedRotated
         {
              // If we find a pair with sum x, we
              // return true
-             if (arr[l] + arr[r] == x)
-                  return true;
+             if (arr[l] + arr[r] == x) {
+                 System.out.println(arr[l] + "+" +arr[r] +" ="+x);
+                 return true;
+             }
+                  
       
              // If current pair sum is less, move 
              // to the higher sum
-             if (arr[l] + arr[r] < x)
+             if (arr[l] + arr[r] < x) {
+                 
                   l = (l + 1) % n;
+                  System.out.println("Moved to the higer sum. now l is ["+l+"] element ["+arr[l]+"]");
+             }
                    
-             else  // Move to the lower sum side
+             else {  // Move to the lower sum side
                   r = (n + r - 1) % n;
+                  System.out.println("Moved to the lower sum. now r is ["+r+"] element ["+arr[r]+"]");
+             }
         }
         return false;
     }
@@ -40,15 +48,15 @@ class PairInSortedRotated
     /* Driver program to test above function */
     public static void main (String[] args)
     {
-        int arr[] = {11, 15, 6, 8, 9, 10};
-        int sum = 16;
+        int arr[] = {11, 13, 6, 7, 9, 10};
+        int sum = 21;
         int n = arr.length;
       
         if (pairInSortedRotated(arr, n, sum))
             System.out.print("Array has two elements" +
-                             " with sum 16");
+                             " with sum "+sum);
         else
             System.out.print("Array doesn't have two" + 
-                             " elements with sum 16 ");
+                             " elements with sum "+sum);
     }
 }

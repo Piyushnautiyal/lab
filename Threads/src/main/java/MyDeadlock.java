@@ -9,7 +9,9 @@ public class MyDeadlock {
         public void run(){
             while(true){
                 synchronized(str1){
+                    System.out.println("Thread 1 got the lock on string 1");
                     synchronized(str2){
+                        System.out.println("Thread 1 got the lock on string 2");
                         System.out.println(str1 + str2);
                     }
                 }
@@ -21,7 +23,9 @@ public class MyDeadlock {
         public void run(){
             while(true){
                 synchronized(str2){
+                    System.out.println("Thread 2 got the lock on string 2");
                     synchronized(str1){
+                        System.out.println("Thread 2 got the lock on string 1");
                         System.out.println(str2 + str1);
                     }
                 }

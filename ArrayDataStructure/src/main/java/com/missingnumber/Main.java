@@ -7,6 +7,12 @@ class Main
     // Function to find missing number
     static int getMissingNo (int a[], int n)
     {
+        /*
+         * n(n+1)/2
+         * is the mathematical formula cor calculating sum of sequence.
+         * 
+         * here n is n+1 because one number is missing.
+         */
         int i, total;
         total  = (n+1)*(n+2)/2;   
         for ( i = 0; i< n; i++)

@@ -28,7 +28,9 @@ public class LargestPairSum {
 			{
 				second = arr[i];
 			}
+			System.out.println("First is ["+first+"] second ["+second+"]");
 		}
+		System.out.println("First is ["+first+"] second ["+second+"]");
 		return first + second; 
 	}
 	public static void main(String[] args) {

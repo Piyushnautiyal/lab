@@ -20,14 +20,14 @@ class Car implements Externalizable {
                               throws IOException
     {
         out.writeObject(name);
+        //out.writeInt(year);
         out.writeInt(age);
-        out.writeInt(year);
     }
     public void readExternal(ObjectInput in) 
        throws IOException, ClassNotFoundException
     {
         name = (String)in.readObject();
-        year = in.readInt();
+        //year = in.readInt();
         age = in.readInt();
     }
     public String toString()

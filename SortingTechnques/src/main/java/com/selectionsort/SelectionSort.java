@@ -17,19 +17,18 @@ public class SelectionSort {
 	}
 	public  void sort(int[] arr) {
 		int n = arr.length;
+		int temp;
 		for(int i=0;i<n;i++)
 		{
 			int index = i;
 			for(int j=i+1;j<n;j++)
 			{
-				if(arr[j]<arr[index])
-					index = j;
+				if(arr[j]<arr[index]) {
+				    temp    = arr[i];
+				    arr[i]  = arr[j];
+				    arr[j]  = temp;
+				}    
 			}	
-			int temp = arr[index];
-			arr[index] = arr[i];
-			arr[i] = temp;
-
 		}
 	}
-
 }

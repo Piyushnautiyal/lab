@@ -9,15 +9,15 @@ public class SerializaitonClass {
 	
     emp.firstName = "Vivekanand";
     emp.lastName = "Gautam";
-    emp.companyName = "JBT";
+    Employee.companyName = "JBT";
     emp.address = "MUM";
-    emp.companyCEO = "ME CEO";
+    Employee.companyCEO = "ME CEO";
     
     //Trying to override static variable "country"
-    emp.Country	= "USA";
+    Employee.Country	= "USA";
     
     //Trying to override static and transient variable "ID"
-    emp.id			= 11;
+    Employee.id			= 11;
     
     try {
       FileOutputStream fileOut = new FileOutputStream("./employee.txt");

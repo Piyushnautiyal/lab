@@ -35,7 +35,7 @@ public class Insert {
 		int i, key = 26;
 
 		System.out.print("Before Insertion: ");
-		for (i = 0; i < n; i++)
+		for (i = 0; i < capacity; i++)
 			System.out.print(arr[i]+" ");
 
 		// Inserting key

@@ -44,14 +44,14 @@ public class Delete {
 		int n = arr.length;
 		int key = 30;
 
-		System.out.println("Array before deletion");
+		System.out.println("Array before deletion length "+arr.length);
 		for (i=0; i<n; i++)
 			System.out.print(arr[i] + " ");
 
 		n = deleteElement(arr, n, key);
 
-		System.out.println("\n\nArray after deletion");
-		for (i=0; i<n; i++)
+		System.out.println("\n\nArray after deletion length "+arr.length);
+		for (i=0; i<arr.length; i++)
 			System.out.print(arr[i]+" ");
 	} 
 
