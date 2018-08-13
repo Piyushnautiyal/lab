@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:context="http://www.springframework.org/schema/context"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans
+    http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+    http://www.springframework.org/schema/context
+    http://www.springframework.org/schema/context/spring-context-3.0.xsd">
+    
+        <bean id="loanRecovery" name="LoanRecoveryThreads" class="classes.LoanRecovery" scope="prototype">
+                <constructor-arg ref="clientSocket" index="0"/>
+                <constructor-arg value="${YESSTOPDATE}" index="1"/>
+                <constructor-arg value="${YESSTARTDATE}" index="2"/>
+                <constructor-arg value="${REPLYIP}" index="3"/>
+                <constructor-arg value="${REPLYPORT}" index="4"/>
+                <constructor-arg value="${INTERFACE}" index="5"/>
+                <constructor-arg value="${CONTINUE}" index="6"/>
+        </bean>
+
+        <bean id="udpServer" name="UdpReciever" class="classes.UdpServer">
+                <constructor-arg ref="serverSocket" index="0"/>
+                <constructor-arg ref="MainQueue" index="1"/>
+        </bean>
+        
+        <bean id="handleReq" name="HandleUdpRequest" class="classes.HandleRequest">
+        	<constructor-arg ref="MainQueue" index="0"/>
+        	<constructor-arg value="${commit_point}" index="1"/>
+        	<constructor-arg ref="db_access" index="2"/>
+        	<constructor-arg value="${deleteQuery}" index="3"/>
+        </bean>
+
+        <bean id="serverSocket" name="ListeningPort" class="java.net.DatagramSocket">
+                <constructor-arg value="${udp_server_port}" index="0"/>
+        </bean>
+
+        <bean id="clientSocket" class="java.net.DatagramSocket" scope="prototype"/>
+
+        <bean id="MainQueue" class="java.util.concurrent.LinkedBlockingQueue"/>
+
+		<bean id="LW" class="classes.LogWriter">
+		<constructor-arg value="${LOG_PATH}" index="0" />
+		<constructor-arg value="2L" index="1" />
+		<constructor-arg value="MB" index="2" />
+		<constructor-arg value="4" index="3" />
+		</bean>
+		
+		<bean id="db_access" class="classes.DB_access">
+		<constructor-arg value="${DB_URL}" index="0" />
+		<constructor-arg value="${DB_USER_NAME}" index="1" />
+		<constructor-arg value="${DB_USER_PASSWORD}" index="2" />
+		</bean>
+		
+       	<bean id="lFile" class="org.apache.log4j.Logger" factory-method="getLogger">
+                        <constructor-arg type="java.lang.Class" value="classes.JAVA_AIG_SERVER"/>
+        </bean>
+
+		<bean class="org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor"/>
+              	
+        <context:property-placeholder location="classpath:Config.properties" /> 
+				
+  				
+				<bean id="messageSource" class="org.springframework.context.support.ReloadableResourceBundleMessageSource" autowire="byName">
+					<property name="basenames">
+						<list>
+							<value>config.properties</value>
+						</list>
+					</property> 
+ 					<property name="cacheSeconds" value="10"/>
+				</bean>
+</beans>
