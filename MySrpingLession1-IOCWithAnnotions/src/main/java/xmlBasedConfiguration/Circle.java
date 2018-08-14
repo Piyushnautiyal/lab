@@ -1,8 +1,5 @@
 package xmlBasedConfiguration;
 
-import org.springframework.stereotype.Component;
-
-@Component
 public class Circle implements shape{
 
   public Circle() {

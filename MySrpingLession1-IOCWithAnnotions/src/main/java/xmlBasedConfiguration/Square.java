@@ -1,8 +1,5 @@
 package xmlBasedConfiguration;
 
-import org.springframework.stereotype.Component;
-
-@Component
 public class Square implements shape {
 
   public Square() {
