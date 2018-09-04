@@ -23,12 +23,12 @@ import com.rest.model.Employee;
  */
 @Controller
 public class EmployeeController {
-	
+
 	private static final Logger logger = LoggerFactory.getLogger(EmployeeController.class);
-	
+
 	//Map to store employees, ideally we should use database
 	Map<Integer, Employee> empData = new HashMap<Integer, Employee>();
-	
+
 	@RequestMapping(value = EmpRestURIConstants.DUMMY_EMP, method = RequestMethod.GET)
 	public @ResponseBody Employee getDummyEmployee() {
 		logger.info("Start getDummyEmployee");
@@ -39,14 +39,14 @@ public class EmployeeController {
 		empData.put(9999, emp);
 		return emp;
 	}
-	
+
 	@RequestMapping(value = EmpRestURIConstants.GET_EMP, method = RequestMethod.GET)
 	public @ResponseBody Employee getEmployee(@PathVariable("id") int empId) {
 		logger.info("Start getEmployee. ID="+empId);
-		
+
 		return empData.get(empId);
 	}
-	
+
 	@RequestMapping(value = EmpRestURIConstants.GET_ALL_EMP, method = RequestMethod.GET)
 	public @ResponseBody List<Employee> getAllEmployees() {
 		logger.info("Start getAllEmployees.");
@@ -57,15 +57,20 @@ public class EmployeeController {
 		}
 		return emps;
 	}
-	
+
 	@RequestMapping(value = EmpRestURIConstants.CREATE_EMP, method = RequestMethod.POST)
-	public @ResponseBody Employee createEmployee(@RequestBody Employee emp) {
+	//public @ResponseBody Employee createEmployee(@RequestBody Employee emp) {
+	public @ResponseBody Employee createEmployee(@PathVariable("id") int empId,@PathVariable("name") String empName) {
 		logger.info("Start createEmployee.");
+		Employee emp = new Employee();	
 		emp.setCreatedDate(new Date());
-		empData.put(emp.getId(), emp);
+		emp.setName(empName);
+		emp.setId(empId);
+		empData.put(empId, emp);
+		
 		return emp;
 	}
-	
+
 	@RequestMapping(value = EmpRestURIConstants.DELETE_EMP, method = RequestMethod.PUT)
 	public @ResponseBody Employee deleteEmployee(@PathVariable("id") int empId) {
 		logger.info("Start deleteEmployee.");
@@ -73,5 +78,5 @@ public class EmployeeController {
 		empData.remove(empId);
 		return emp;
 	}
-	
+
 }
