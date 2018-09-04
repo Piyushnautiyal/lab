@@ -5,7 +5,15 @@ import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
 public class CachedThreadPoolDemo {
-
+/**
+ * newCachedThreadPool() – doesn’t put tasks into a queue. 
+ * Consider this as the same as using a queue with the maximum size of 0. 
+ * When all current threads are busy, 
+ * it creates another thread to run the task.
+ * 
+ * @param args
+ * @throws Exception
+ */
 	public static void main(String[] args) throws Exception {
 		ExecutorService exService = Executors.newCachedThreadPool();
 		

@@ -5,7 +5,7 @@ import java.util.HashMap;
 public class TestHeapAndPoolStringAsKey {
 
     public static void main(String[] args) {
-        String a    = new String("RaM");
+        String a    = new String("Ram");
         String b    = "Ram";
         
         System.out.println("a==b "+(a==b));

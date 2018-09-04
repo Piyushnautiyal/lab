@@ -1,4 +1,5 @@
-package javaBasedConfiguration;
+package xmlBasedConfigurations.definingBeans;
+
 public class Square implements shape {
 
   public Square() {

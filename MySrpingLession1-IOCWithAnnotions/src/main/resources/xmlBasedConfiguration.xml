@@ -9,10 +9,10 @@
 
 
 
-	<bean id="circle" name="shapeCirlce" class="xmlBasedConfiguration.Circle"
+	<bean id="circle" name="shapeCirlce" class="xmlBasedConfigurations.definingBeans.Circle"
 		scope="prototype" />
 
-	<bean id="square" name="shapeSquare" class="xmlBasedConfiguration.Square"
+	<bean id="square" name="shapeSquare" class="xmlBasedConfigurations.definingBeans.Square"
 		scope="prototype" />
 		
 </beans>

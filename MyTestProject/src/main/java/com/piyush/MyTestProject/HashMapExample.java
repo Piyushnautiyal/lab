@@ -10,7 +10,7 @@ public class HashMapExample {
 		hm.put("2", "ECE");
 		hm.put("3", "IT");
 		hm.put("4", "ME");
-		System.out.println("Val from Map "+hm.get(1));
+		System.out.println("Val from Map "+hm.get("1"));
 	}
 
 }

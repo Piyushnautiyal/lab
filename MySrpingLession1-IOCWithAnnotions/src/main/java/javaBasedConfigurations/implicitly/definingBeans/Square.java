@@ -1,4 +1,4 @@
-package javaBasedConfiguration.components;
+package javaBasedConfigurations.implicitly.definingBeans;
 
 import org.springframework.stereotype.Component;
 

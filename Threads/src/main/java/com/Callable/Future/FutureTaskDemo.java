@@ -20,8 +20,6 @@ public class FutureTaskDemo {
         Future<?> future                = executorService.submit(futureTask,"Piyush");
         
         
-        Thread.sleep(3000);
-        
         if(futureTask.isDone()) {
             System.out.println("From FutureTask "+futureTask.get());
             System.out.println("From Future "+future.get());
@@ -36,7 +34,7 @@ class SomeCallableTask implements Callable<String>{
     @Override
     public String call() throws Exception {
         try {
-            Thread.sleep(2000);
+            Thread.sleep(10000);
         }catch(Exception e) {
             
         }

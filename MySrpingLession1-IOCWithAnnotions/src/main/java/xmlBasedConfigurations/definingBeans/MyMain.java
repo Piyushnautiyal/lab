@@ -1,9 +1,15 @@
-package xmlBasedConfiguration;
+package xmlBasedConfigurations.definingBeans;
 
 import org.springframework.context.ApplicationContext;
-import org.springframework.context.annotation.AnnotationConfigApplicationContext;
-import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
+
+/**
+ * 
+ * @author piyush.nautiyal
+ * 
+ * Please Run maven clean install before making any changes and running this main.
+ *
+ */
 
 public class MyMain {
 

@@ -1,5 +1,4 @@
-package xmlBasedConfiguration;
-
+package javaBasedConfigurations.explicitly.definingBeans;
 public class Circle implements shape{
 
   public Circle() {

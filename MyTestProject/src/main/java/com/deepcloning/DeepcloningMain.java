@@ -17,7 +17,8 @@ public class DeepcloningMain {
 		System.out.println("Student 1  "+std.course.subject1);
 		std1.course.subject1="English";
 		System.out.println("Student 1  "+std.course.subject1);
-
+		
+		System.out.println("BUT Student 1  "+std1.course.subject1);
 	}
 
 }
