@@ -1,5 +1,9 @@
 package com.rest.controller;
 
+/*
+ * LINK : https://www.journaldev.com/2552/spring-rest-example-tutorial-spring-restful-web-services
+ */
+
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.HashMap;
