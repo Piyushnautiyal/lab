@@ -8,10 +8,16 @@ public class RelationBetweenFunctionalInterfaceAndLamdaExpression {
      *    and therefore implement functional interfaces
      * 
      */
-    
+
     public static void main(String[] args) {
+
+        FunctionalInterfaceDemo functionalInterfaceDemo = (/*As there is no parameter in doSomething method so it will be bank*/)->{
+            /**
+             * This will be the implementation of the method doSomething() in FunctionalInterfaceDemo
+             */
+            System.out.println("Do something method is called");
+        };
         
-        FunctionalInterfaceDemo functionalInterfaceDemo = ()->{System.out.println("Do something method is called");};
         functionalInterfaceDemo.doSomething();
     }
 }
