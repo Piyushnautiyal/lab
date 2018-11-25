@@ -64,8 +64,8 @@ class Unit1ExerciseSolutionJava7{
 			System.out.println(p);
 		}
 	}
-	interface Condition{
-		boolean test(Person p);
-	}
-
+	
+}
+interface Condition{
+	boolean test(Person p);
 }
