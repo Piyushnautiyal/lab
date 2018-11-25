@@ -1,3 +1,4 @@
+package io.javabrains.unit1;
 /*
  * This works because Runnable has a single method . If it had more than one method , you could not have written a lambda function
  * of that type
