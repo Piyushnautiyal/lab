@@ -1,7 +1,7 @@
 import java.util.Arrays;
 import java.util.Collections;
-import java.util.Comparator;
 import java.util.List;
+import java.util.function.Predicate;
 
 
 public class Unit1ExerciseSolutionJava8 {
@@ -29,13 +29,18 @@ public class Unit1ExerciseSolutionJava8 {
 		System.out.println("------> Printing all people whose firstName startswith P");
 		printConditionally(people,p->p.getFirstName().startsWith("P") );
 	}
-	
-	private static void printConditionally(List<Person> people, Condition condition) {
+
+	//private static void printConditionally(List<Person> people, Condition condition) {
+
+	/**	USING PREDICATE INTERFACE IN THIS CASE JAVA PROVIDES SOME INTERFACE TO SOLVE OUR COMMON PROBLEMS															
+	 * java.util.functions
+	 * ***/
+	private static void printConditionally(List<Person> people, Predicate<Person> predicate) {
 		for(Person p :people) {
-			if(condition.test(p)) {
+			if(predicate.test(p)) {
 				System.out.println(p);
 			}		
 		}
-	}
 
+	}
 }
