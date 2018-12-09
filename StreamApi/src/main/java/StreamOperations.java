@@ -29,9 +29,9 @@ public class StreamOperations {
 
 		System.out.println(":::::::::::::::::::::::::::");
 
-		memberNames.stream().sorted()
-		.map(String::toUpperCase)
-		.forEach(System.out::println);
+			memberNames.stream().sorted()
+			.map(String::toUpperCase)
+			.forEach(System.out::println);
 
 		System.out.println(":::::::::::::::::::::::::::");
 
