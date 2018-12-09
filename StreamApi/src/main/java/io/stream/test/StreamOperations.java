@@ -3,7 +3,7 @@ package io.stream.test;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Optional;
-import java.util.stream.Collector;
+import java.util.function.Supplier;
 import java.util.stream.Collectors;
 
 public class StreamOperations {
@@ -25,6 +25,9 @@ public class StreamOperations {
 		costBeforeTax.stream().map(cost -> cost + .12*cost).forEach(System.out::println);
 		double bill = costBeforeTax.stream().map(cost -> cost + .12*cost).reduce((sum,cost) -> sum+cost).get();
 		System.out.println("DOUBLE "+bill);
+		
+		
+		
 	}
 
 }
