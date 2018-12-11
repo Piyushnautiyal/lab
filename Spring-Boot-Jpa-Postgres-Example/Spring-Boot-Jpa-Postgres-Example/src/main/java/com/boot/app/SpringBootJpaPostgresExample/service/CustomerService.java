@@ -32,7 +32,7 @@ public class CustomerService {
 
 	}
 
-	public Optional<Customer> getCustomerDetails(String Id) {
+	public Optional<Customer> getCustomerDetails(Long Id) {
 
 		return customerRepository.findById(Id);
 

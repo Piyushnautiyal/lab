@@ -37,12 +37,12 @@ public class CustomerController {
 		return new ResponseEntity<>(Id,HttpStatus.CREATED);
 	}
 	
-	@RequestMapping("/customers/{id}")
-	public Optional<Customer> getCustomer(@PathVariable String id) {
+	@GetMapping("/{id}")
+	public Optional<Customer> getCustomer(@PathVariable Long id) {
 		return customerService.getCustomerDetails(id);
 	}
 	
-	@RequestMapping("/customers/{lastName}")
+	@GetMapping("/bylastname/{lastName}")
 	public List<Customer> getCustomerByLastName(@PathVariable String lastName) {
 		return customerService.getCustomerByLastName(lastName);
 	}

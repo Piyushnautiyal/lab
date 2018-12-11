@@ -7,7 +7,7 @@ import org.springframework.data.repository.CrudRepository;
 import com.boot.app.SpringBootJpaPostgresExample.service.Customer;
 
 
-public interface CustomerRepository extends CrudRepository<Customer,String> {
+public interface CustomerRepository extends CrudRepository<Customer, Long> {
 	
 	
     List<Customer> findByLastName(String lastName);
